@@ -37,7 +37,7 @@ function searshPages(el) {
 function addPages(){
     search.page ++;
     search.fetchPhoto().then(({data})=> {
-        if(data.totalHits < search.page){
+        if(data.totalHits <= search.page){
             buttonNextEl.classList.add('is-hiden');
             Notiflix.Notify.failure("We're sorry, but you've reached the end of search results.");
             return;
